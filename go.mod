@@ -24,6 +24,7 @@ require (
 	github.com/Azure/go-ansiterm v0.0.0-20210617225240-d185dfc1b5a1 // indirect
 	github.com/Microsoft/go-winio v0.6.2 // indirect
 	github.com/awnumar/memguard v0.22.3 // indirect
+	github.com/bits-and-blooms/bitset v1.24.1 // indirect
 	github.com/bmatcuk/doublestar/v4 v4.9.0 // indirect
 	github.com/cenkalti/backoff/v4 v4.2.1 // indirect
 	github.com/containerd/errdefs v1.0.0 // indirect
@@ -71,6 +72,8 @@ require (
 	github.com/spf13/pflag v1.0.6 // indirect
 	github.com/tklauser/go-sysconf v0.3.12 // indirect
 	github.com/tklauser/numcpus v0.6.1 // indirect
+	github.com/yeqown/go-qrcode/v2 v2.2.5 // indirect
+	github.com/yeqown/reedsolomon v1.0.0 // indirect
 	github.com/yusufpapurcu/wmi v1.2.4 // indirect
 	github.com/zitadel/logging v0.6.2 // indirect
 	github.com/zitadel/schema v1.3.1 // indirect
@@ -104,3 +107,5 @@ require (
 	golang.org/x/text v0.27.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1
 )
+
+replace github.com/openpubkey/openpubkey v0.18.0 => ../openpubkey

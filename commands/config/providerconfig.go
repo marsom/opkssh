@@ -40,6 +40,7 @@ type ProviderConfig struct {
 	AccessType      string   `yaml:"access_type,omitempty"`
 	Prompt          string   `yaml:"prompt,omitempty"`
 	RedirectURIs    []string `yaml:"redirect_uris"`
+	DeviceFlow      bool     `yaml:"device_flow,omitempty"`
 	SendAccessToken bool     `yaml:"send_access_token,omitempty"`
 }
 
@@ -53,6 +54,7 @@ func (p *ProviderConfig) UnmarshalYAML(value *yaml.Node) error {
 		AccessType      string   `yaml:"access_type"`
 		Prompt          string   `yaml:"prompt"`
 		RedirectURIs    []string `yaml:"redirect_uris"`
+		DeviceFlow      bool     `yaml:"device_flow"`
 		SendAccessToken bool     `yaml:"send_access_token,omitempty"`
 	}
 
@@ -78,6 +80,7 @@ func (p *ProviderConfig) UnmarshalYAML(value *yaml.Node) error {
 		AccessType:      tmp.AccessType,
 		Prompt:          tmp.Prompt,
 		RedirectURIs:    tmp.RedirectURIs,
+		DeviceFlow:      tmp.DeviceFlow,
 		SendAccessToken: tmp.SendAccessToken,
 	}
 	return nil
@@ -244,6 +247,7 @@ func (p *ProviderConfig) ToProvider(openBrowser bool) (providers.OpenIdProvider,
 		opts.AccessType = p.AccessType
 		opts.RedirectURIs = p.RedirectURIs
 		opts.GQSign = false
+		opts.DeviceFlow = p.DeviceFlow
 		if p.hasScopes() {
 			opts.Scopes = p.Scopes
 		}
